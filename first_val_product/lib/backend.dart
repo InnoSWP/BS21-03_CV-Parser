@@ -1,7 +1,7 @@
 import 'dart:core';
 import 'dart:io';
 
-import 'package:pdf_text/pdf_text.dart';
+import 'package:read_pdf_text/read_pdf_text.dart';
 import "package:file_picker/file_picker.dart";
 import 'package:path_provider/path_provider.dart';
 
@@ -16,8 +16,15 @@ Future<File?> getCV() async {
   return null;
 }
 
-Future<String> pdfToString(File pdfFile) async {
-  return (await PDFDoc.fromFile(pdfFile)).text;
+Future<String?> pdfToString(File pdfFile) async {
+  String text = "";
+  try {
+    text = await ReadPdfText.getPDFtext(pdfFile.path);
+  } catch (err) {
+    print(err);
+    return null;
+  }
+  return text;
 }
 
 Future<String> stringToJson(String cvString) async {

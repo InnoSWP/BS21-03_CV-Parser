@@ -18,9 +18,13 @@ class _MainPageState extends State<MainPage> {
     if (newFile != null) {
       file = newFile;
     }
-    String newText =
-        await backend.stringToJson(await backend.pdfToString(file));
-    jsonHolder.updateText(newText);
+    await backend.pdfToString(file).then((value) {
+      if (value != null) {
+        jsonHolder.updateText(value);
+      } else {
+        jsonHolder.updateText("Loaded text");
+      }
+    });
   }
 
   void onExportJson(String json, String fileName) async {
