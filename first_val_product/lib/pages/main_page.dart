@@ -14,11 +14,7 @@ class _MainPageState extends State<MainPage> {
   late File file;
   JsonHolder jsonHolder = JsonHolder();
   void onAddResume() async {
-    File? newFile = await backend.getCV();
-    if (newFile != null) {
-      file = newFile;
-    }
-    await backend.pdfToString(file).then((value) {
+    await backend.getCVString().then((value) {
       if (value != null) {
         jsonHolder.updateText(value);
       } else {

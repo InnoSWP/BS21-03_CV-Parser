@@ -1,30 +1,22 @@
 import 'dart:core';
 import 'dart:io';
 
-import 'package:read_pdf_text/read_pdf_text.dart';
+import 'package:pdf_text/pdf_text.dart';
 import "package:file_picker/file_picker.dart";
 import 'package:path_provider/path_provider.dart';
+import 'package:syncfusion_flutter_pdf/pdf.dart';
 
-Future<File?> getCV() async {
+Future<String?> getCVString() async {
   FilePickerResult? result = await FilePicker.platform.pickFiles(
-    type: FileType.custom,
-    allowedExtensions: ['jpg', 'pdf', 'doc'],
-  );
+      type: FileType.custom, allowedExtensions: ['pdf'], withData: true);
   if (result != null) {
-    return File(result.files.single.path!);
+    final PdfDocument document =
+        PdfDocument(inputBytes: result.files.single.bytes);
+    String text = PdfTextExtractor(document).extractText();
+    document.dispose();
+    return text;
   }
   return null;
-}
-
-Future<String?> pdfToString(File pdfFile) async {
-  String text = "";
-  try {
-    text = await ReadPdfText.getPDFtext(pdfFile.path);
-  } catch (err) {
-    print(err);
-    return null;
-  }
-  return text;
 }
 
 Future<String> stringToJson(String cvString) async {
