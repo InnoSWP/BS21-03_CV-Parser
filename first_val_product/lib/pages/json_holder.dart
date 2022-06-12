@@ -9,7 +9,7 @@ class JsonHolder extends StatefulWidget {
     return state;
   }
 
-  late String currentText =
+  String currentText =
       'In this course  Hover Fopment. Topics winges, Hover Functionality, Modals and more.In Responsive  go. n this course  Hover Fopment. Topics winges, Hover Functionality, Modals and more.In Responsive  go n this course  Hover Fopment. Topics winges, Hover Functionality, Modals and more.In Responsive  gon this course  Hover Fopment. Topics winges, Hover Functionality, Modals and more.In Responsive  gon this course  Hover Fopment. Topics winges, Hover Functionality, Modals and more.In Responsive  go';
   void updateText(String newText) {
     state.setState(() {
@@ -33,7 +33,7 @@ class _JsonHolderState extends State<JsonHolder> {
                 style: const TextStyle(
                   fontFamily: 'Marriweather',
                   fontSize: 50,
-                  color: Color.fromRGBO(255, 77, 102, 1.0),
+                  color: Color.fromRGBO(73, 69, 79, 1),
                 ),
               ),
             )));
