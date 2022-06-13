@@ -5,17 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d5b69b2-7fd3-43f5-8661-776c97157f05" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/first_val_product/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/ios/Flutter/Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/BS21-03_CV-Parser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BS21-03_CV-Parser.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/first_val_product/lib/pages/json_holder.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/pages/json_holder.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/first_val_product/lib/pages/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/pages/main_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/macos/Flutter/Flutter-Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/macos/Flutter/Flutter-Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/macos/Flutter/Flutter-Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/macos/Flutter/Flutter-Release.xcconfig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Dart File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">

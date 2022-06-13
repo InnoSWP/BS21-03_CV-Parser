@@ -2,6 +2,10 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'json_holder.dart';
 import 'package:first_val_product/backend.dart' as backend;
+import 'package:first_val_product/pages/file_widget.dart';
+import 'package:first_val_product/pages/search_widget.dart';
+import 'package:first_val_product/pages/button_widget.dart';
+import 'package:first_val_product/pages/empty_widget.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -11,7 +15,7 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  late File file;
+  late File? file= null;
   JsonHolder jsonHolder = JsonHolder();
   void onAddResume() async {
     await backend.getCVString().then((value) {
@@ -30,21 +34,15 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     bool isScreenWide = MediaQuery.of(context).size.width >= 1000;
+    Widget displayWidget;
+    if(file!=null){
+      displayWidget = JsonHolder();
+    }
+    else{
+      displayWidget = EmptyWidget();
+    }
     return Scaffold(
         backgroundColor: const Color.fromRGBO(251, 253, 247, 1),
-        /*appBar: AppBar(
-
-        title: const Text(
-          "iExtract",
-          style: TextStyle(
-              fontFamily: 'Eczar',
-              fontSize: 60,
-              color: Color.fromRGBO(134, 73, 33, 1.0)),
-        ),
-        centerTitle: false,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),*/
         body: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -73,7 +71,7 @@ class _MainPageState extends State<MainPage> {
                     ),
                   ),
                   Expanded(
-                    child: jsonHolder,
+                    child: displayWidget,/*jsonHolder*/
                   ),
                 ],
               ),
@@ -89,47 +87,7 @@ class _MainPageState extends State<MainPage> {
                 //mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  Container(
-                    margin: const EdgeInsets.only(top: 20),
-                    padding: const EdgeInsets.all(2),
-                    width: MediaQuery.of(context).size.width * 0.25,
-                    height: MediaQuery.of(context).size.width * 0.02,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: const Color.fromRGBO(251, 253, 247, 1),
-                      border: Border.all(
-                          width: 1, color: const Color.fromRGBO(73, 69, 79, 1)),
-                    ),
-                    child: ElevatedButton.icon(
-                      onPressed: () {},
-                      icon: Icon(
-                        size: MediaQuery.of(context).size.width * 0.015,
-                        Icons.search,
-                        color: const Color.fromRGBO(73, 69, 79, 1),
-                      ),
-                      label: Text(
-                        'search',
-                        style: TextStyle(
-                          color: const Color.fromRGBO(73, 69, 79, 1),
-                          fontFamily: 'Marriweather',
-                          fontSize: MediaQuery.of(context).size.width * 0.01,
-                        ),
-                      ),
-                      style: ButtonStyle(
-                        shape:
-                            MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                        ),
-                        //minimumSize: MaterialStateProperty.all(const Size(140, 50)),
-                        backgroundColor:
-                            MaterialStateProperty.all(Colors.transparent),
-                        shadowColor:
-                            MaterialStateProperty.all(Colors.transparent),
-                      ),
-                    ),
-                  ),
+                  SearchWidget(),
                   Expanded(
                     child: Container(
                         margin: const EdgeInsets.all(20.0),
@@ -147,132 +105,10 @@ class _MainPageState extends State<MainPage> {
                                     Row(
                                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                       children: [
-                                        Container(
-                                          padding: const EdgeInsets.all(1),
-                                          height:
-                                          MediaQuery.of(context).size.width *
-                                              0.11,
-                                          width: MediaQuery.of(context).size.width *
-                                              0.08,
-                                          decoration: BoxDecoration(
-                                            color: Colors.transparent,
-                                            border: Border.all(
-                                                color:
-                                                const Color.fromRGBO(73, 69, 79, 1)),
-                                          ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                padding: EdgeInsets.only(left: 65),
-                                                child: IconButton(icon: Icon(Icons.close, size: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                    0.013,  color: Color.fromRGBO(73, 69, 79, 1),), onPressed: () {  },)
-                                                /*Icon(Icons.close, color: Color.fromRGBO(73, 69, 79, 1),
-                                                  size: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                      0.015,
-                                                ),*/
-                                              ),
-                                              Container(
-                                                  child: Icon(
-                                                      Icons
-                                                          .insert_drive_file_outlined,
-                                                      color: const Color.fromRGBO(
-                                                          77, 102, 88, 1),
-                                                      size: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                          0.06)),
-                                              Container(
-                                                padding: const EdgeInsets.only(left: 8),
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                    0.06,
-                                                child: Text(
-                                                  "yourFilek.aboba",
-                                                  style: TextStyle(
-                                                      color: const Color.fromRGBO(
-                                                          73, 69, 79, 1),
-                                                      fontSize:
-                                                      MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                          0.006),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                        Container(
-                                          padding: const EdgeInsets.all(1),
-                                          height:
-                                          MediaQuery.of(context).size.width *
-                                              0.11,
-                                          width: MediaQuery.of(context).size.width *
-                                              0.08,
-                                          decoration: BoxDecoration(
-                                            color: Colors.transparent,
-                                            border: Border.all(
-                                                color:
-                                                const Color.fromRGBO(73, 69, 79, 1)),
-                                          ),
-                                          child: Column(
-                                            crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                            children: [
-                                              Container(
-                                                  padding: EdgeInsets.only(left: 65),
-                                                  child: IconButton(icon: Icon(Icons.close, size: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                      0.013,  color: Color.fromRGBO(73, 69, 79, 1),), onPressed: () {  },)
-                                                /*Icon(Icons.close, color: Color.fromRGBO(73, 69, 79, 1),
-                                                  size: MediaQuery.of(context)
-                                                      .size
-                                                      .width *
-                                                      0.015,
-                                                ),*/
-                                              ),
-                                              Container(
-                                                  child: Icon(
-                                                      Icons
-                                                          .insert_drive_file_outlined,
-                                                      color: const Color.fromRGBO(
-                                                          77, 102, 88, 1),
-                                                      size: MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                          0.06)),
-                                              Container(
-                                                padding: const EdgeInsets.only(left: 8),
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width *
-                                                    0.06,
-                                                child: Text(
-                                                  "yourFilek.aboba",
-                                                  style: TextStyle(
-                                                      color: const Color.fromRGBO(
-                                                          73, 69, 79, 1),
-                                                      fontSize:
-                                                      MediaQuery.of(context)
-                                                          .size
-                                                          .width *
-                                                          0.006),
-                                                ),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-
+                                       FileWidget(),
+                                        FileWidget(),
                                       ],
                                     )
-
                                   ],
                                 )
                                 ))),

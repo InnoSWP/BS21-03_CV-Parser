@@ -9,9 +9,10 @@ class JsonHolder extends StatefulWidget {
     return state;
   }
 
-  String currentText =
-      'In this course  Hover Fopment. Topics winges, Hover Functionality, Modals and more.In Responsive  go. n this course  Hover Fopment. Topics winges, Hover Functionality, Modals and more.In Responsive  go n this course  Hover Fopment. Topics winges, Hover Functionality, Modals and more.In Responsive  gon this course  Hover Fopment. Topics winges, Hover Functionality, Modals and more.In Responsive  gon this course  Hover Fopment. Topics winges, Hover Functionality, Modals and more.In Responsive  go';
+  bool flag= false;
+  String currentText = '';
   void updateText(String newText) {
+    flag=true;
     state.setState(() {
       currentText = newText;
     });
@@ -25,8 +26,9 @@ class _JsonHolderState extends State<JsonHolder> {
         margin: const EdgeInsets.all(20.0),
         decoration: const BoxDecoration(color: Colors.transparent),
         child: SizedBox(
-            height: double.infinity,
-            child: SingleChildScrollView(
+            //height: double.infinity,
+            child:
+            SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Text(
                 widget.currentText,
@@ -35,7 +37,7 @@ class _JsonHolderState extends State<JsonHolder> {
                   fontSize: 50,
                   color: Color.fromRGBO(73, 69, 79, 1),
                 ),
-              ),
-            )));
+              ),)
+            ));
   }
 }
