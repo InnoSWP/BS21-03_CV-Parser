@@ -102,19 +102,6 @@ class FullCVInfo {
 class CVInfoGroup {
   late String name;
   late List<String> parameters;
-  CVInfoGroup? parse(String source) {
-    try {
-      List<String> deserialized = source.split(": ");
-      name = deserialized[0];
-      parameters = [];
-      for (var i = 1; i < deserialized.length; i++) {
-        parameters.add(deserialized[i]);
-      }
-    } catch (err) {
-      return null;
-    }
-  }
-
   CVInfoGroup(this.name, this.parameters);
 }
 
