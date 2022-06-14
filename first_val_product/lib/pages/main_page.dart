@@ -4,7 +4,6 @@ import 'json_holder.dart';
 import 'package:first_val_product/backend.dart' as backend;
 import 'package:first_val_product/pages/file_widget.dart';
 import 'package:first_val_product/pages/search_widget.dart';
-import 'package:first_val_product/pages/button_widget.dart';
 import 'package:first_val_product/pages/empty_widget.dart';
 
 class MainPage extends StatefulWidget {
@@ -15,12 +14,13 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  late File? file= null;
+  late File? file = null;
+
   JsonHolder jsonHolder = JsonHolder();
   void onAddResume() async {
-    await backend.getCVString().then((value) {
+    await backend.getCVInfo().then((value) {
       if (value != null) {
-        jsonHolder.updateText(value);
+        jsonHolder.updateText(value.coolText);
       } else {
         jsonHolder.updateText("Loaded text");
       }
@@ -33,20 +33,12 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    bool isScreenWide = MediaQuery.of(context).size.width >= 1000;
-    Widget displayWidget;
-    if(file!=null){
-      displayWidget = JsonHolder();
-    }
-    else{
-      displayWidget = EmptyWidget();
-    }
     return Scaffold(
         backgroundColor: const Color.fromRGBO(251, 253, 247, 1),
         body: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            /*Expanded(child: */ Container(
+            Container(
               width: MediaQuery.of(context).size.width * 0.65,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,9 +62,7 @@ class _MainPageState extends State<MainPage> {
                       color: const Color.fromRGBO(73, 69, 79, 1),
                     ),
                   ),
-                  Expanded(
-                    child: displayWidget,/*jsonHolder*/
-                  ),
+                  Expanded(child: jsonHolder),
                 ],
               ),
             ) /*)*/
@@ -84,7 +74,6 @@ class _MainPageState extends State<MainPage> {
                 child: Container(
               padding: const EdgeInsets.all(20),
               child: Column(
-                //mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   SearchWidget(),
@@ -103,23 +92,22 @@ class _MainPageState extends State<MainPage> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
                                       children: [
-                                       FileWidget(),
+                                        FileWidget(),
                                         FileWidget(),
                                       ],
                                     )
                                   ],
-                                )
-                                ))),
+                                )))),
                   ),
                   SizedBox(
                     height: MediaQuery.of(context).size.width * 0.03,
                   )
                 ],
               ),
-            )
-                )
+            ))
           ],
         ),
         floatingActionButton: Wrap(

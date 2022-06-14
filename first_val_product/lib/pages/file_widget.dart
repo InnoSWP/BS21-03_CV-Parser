@@ -10,7 +10,7 @@ class _FileWidgetState extends State<FileWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(1),
+      padding: const EdgeInsets.all(5),
       height:
       MediaQuery.of(context).size.width *
           0.11,
@@ -26,12 +26,13 @@ class _FileWidgetState extends State<FileWidget> {
         crossAxisAlignment:
         CrossAxisAlignment.center,
         children: [
+
           Container(
               padding: EdgeInsets.only(left: 65),
               child: IconButton(icon: Icon(Icons.close, size: MediaQuery.of(context)
                   .size
                   .width *
-                  0.013,  color: Color.fromRGBO(73, 69, 79, 1),), onPressed: () {  },)
+                  0.01,  color: Color.fromRGBO(73, 69, 79, 1),), onPressed: () {  },)
           ),
           Container(
               child: Icon(
@@ -42,7 +43,7 @@ class _FileWidgetState extends State<FileWidget> {
                   size: MediaQuery.of(context)
                       .size
                       .width *
-                      0.06)),
+                      0.05)),
           Container(
             padding: const EdgeInsets.only(left: 8),
             width: MediaQuery.of(context)
