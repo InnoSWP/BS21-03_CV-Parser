@@ -34,6 +34,7 @@ dependencies:
   path_provider: ^2.0.11
   pdf_text: ^0.5.0
   syncfusion_flutter_pdf: ^20.1.59-beta
+  flutter_file_saver: any
   
 
   # The following adds the Cupertino Icons font to your application.
