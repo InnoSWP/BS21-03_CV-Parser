@@ -14,6 +14,7 @@ class MainPage extends StatefulWidget {
   late State<MainPage> currentState;
   CVInfo? currentCVInfo;
   late List<CVInfo> allCVInfos;
+  late List<CVInfo> shownCVInfos;
   late List<FileWidget> fileWidgets;
   late Widget displayWidget;
   MainPage({Key? key}) : super(key: key) {
@@ -22,6 +23,7 @@ class MainPage extends StatefulWidget {
     displayWidget = const EmptyWidget();
     allCVInfos = [];
     fileWidgets = [];
+    shownCVInfos = [];
   }
 
   void removeCV(CVInfo cvInfoToRemove) {
@@ -45,12 +47,14 @@ class MainPage extends StatefulWidget {
 
   void addResume() async {
     print("Adding new CV");
-    currentCVInfo = await getCVInfo();
-    if (currentCVInfo != null) {
+    List<CVInfo> newCVs = await getCVInfos();
+    for (var cv in newCVs) {
+      currentCVInfo = cv;
       allCVInfos.add(currentCVInfo!);
       displayWidget = JsonHolder(text: currentCVInfo!.coolText);
       fileWidgets.add(FileWidget(cvInfo: currentCVInfo!));
     }
+    clearSearchBox();
     currentState.setState(() {});
   }
 
@@ -66,14 +70,20 @@ class MainPage extends StatefulWidget {
     }
   }
 
-  List<CVInfo> findCVsByParameter(String parameter) {
-    List<CVInfo> r = [];
+  void findCVsByParameter(String parameter) {
+    shownCVInfos = [];
     for (var cvInfo in allCVInfos) {
       if (cvInfo.searchFor(parameter)) {
-        r.add(cvInfo);
+        shownCVInfos.add(cvInfo);
       }
     }
-    return r;
+    currentState.setState(() {});
+  }
+
+  void clearSearchBox() {
+    shownCVInfos = [];
+    shownCVInfos.addAll(allCVInfos);
+    currentState.setState(() {});
   }
 
   @override
@@ -86,8 +96,8 @@ class _MainPageState extends State<MainPage> {
     widget.currentState = this;
     List<Widget> fileWidgetHolderChildren = [];
     List<FileWidget> currentRowChildren = [];
-    for (var i = 0; i < widget.allCVInfos.length; i++) {
-      currentRowChildren.add(FileWidget(cvInfo: widget.allCVInfos[i]));
+    for (var i = 0; i < widget.shownCVInfos.length; i++) {
+      currentRowChildren.add(FileWidget(cvInfo: widget.shownCVInfos[i]));
       if (i % MainPage.filesPerRow == MainPage.filesPerRow - 1) {
         fileWidgetHolderChildren.add(Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -97,7 +107,7 @@ class _MainPageState extends State<MainPage> {
         currentRowChildren = [];
       }
     }
-    if (widget.allCVInfos.length % MainPage.filesPerRow > 0) {
+    if (widget.shownCVInfos.length % MainPage.filesPerRow > 0) {
       fileWidgetHolderChildren.add(Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: currentRowChildren,

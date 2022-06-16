@@ -18,17 +18,16 @@ class JsonHolder extends StatelessWidget {
         child: SizedBox(
             //height: double.infinity,
             child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child:
-              //Column(children: jsonHolderBoxes,)
-              Text(
-            text,
-            style: const TextStyle(
-              fontFamily: 'Marriweather',
-              fontSize: 50,
-              color: Color.fromRGBO(73, 69, 79, 1),
-            ),
-          ),
-        )));
+                scrollDirection: Axis.vertical,
+                child: Column(children: jsonHolderBoxes)
+                //   Text(
+                // text,
+                // style: const TextStyle(
+                //   fontFamily: 'Marriweather',
+                //   fontSize: 50,
+                //   color: Color.fromRGBO(73, 69, 79, 1),
+                // ),
+                //),
+                )));
   }
 }
