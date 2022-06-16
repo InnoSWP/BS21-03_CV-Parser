@@ -1,3 +1,5 @@
+import 'package:first_val_product/main_page.dart';
+import 'package:first_val_product/widgets/json_holder_box.dart';
 import 'package:flutter/material.dart';
 import 'package:first_val_product/widgets/empty_widget.dart';
 
@@ -6,6 +8,10 @@ class JsonHolder extends StatelessWidget {
   const JsonHolder({required this.text, Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    List<JsonHolderBox> jsonHolderBoxes = [];
+    for (var cvInfoGroup in MainPage.instance.currentCVInfo!.infoGroups) {
+      jsonHolderBoxes.add(JsonHolderBox(infoGroup: cvInfoGroup));
+    }
     return Container(
         margin: const EdgeInsets.all(20.0),
         decoration: const BoxDecoration(color: Colors.transparent),
@@ -13,7 +19,9 @@ class JsonHolder extends StatelessWidget {
             //height: double.infinity,
             child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Text(
+          child:
+              //Column(children: jsonHolderBoxes,)
+              Text(
             text,
             style: const TextStyle(
               fontFamily: 'Marriweather',

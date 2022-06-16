@@ -9,6 +9,7 @@ import 'package:first_val_product/widgets/search_widget.dart';
 import 'package:first_val_product/widgets/empty_widget.dart';
 
 class MainPage extends StatefulWidget {
+  static const int filesPerRow = 2;
   static late MainPage instance;
   late State<MainPage> currentState;
   CVInfo? currentCVInfo;
@@ -22,6 +23,15 @@ class MainPage extends StatefulWidget {
     allCVInfos = [];
     fileWidgets = [];
   }
+
+  void removeCV(CVInfo cvInfoToRemove) {
+    if (currentCVInfo == cvInfoToRemove) {
+      chooseCV(cvInfoToRemove);
+    }
+    allCVInfos.remove(cvInfoToRemove);
+    currentState.setState(() {});
+  }
+
   void chooseCV(CVInfo cvInfo) {
     if (currentCVInfo == cvInfo) {
       currentCVInfo = null;
@@ -78,7 +88,7 @@ class _MainPageState extends State<MainPage> {
     List<FileWidget> currentRowChildren = [];
     for (var i = 0; i < widget.allCVInfos.length; i++) {
       currentRowChildren.add(FileWidget(cvInfo: widget.allCVInfos[i]));
-      if (i % 3 == 2) {
+      if (i % MainPage.filesPerRow == MainPage.filesPerRow - 1) {
         fileWidgetHolderChildren.add(Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: currentRowChildren,
@@ -87,7 +97,7 @@ class _MainPageState extends State<MainPage> {
         currentRowChildren = [];
       }
     }
-    if (widget.allCVInfos.length % 3 > 0) {
+    if (widget.allCVInfos.length % MainPage.filesPerRow > 0) {
       fileWidgetHolderChildren.add(Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: currentRowChildren,
