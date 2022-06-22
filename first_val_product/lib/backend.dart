@@ -117,7 +117,7 @@ class CVInfo {
     applicantsEmail = infoGroups
         .lastWhere((element) => element.name == "Emails")
         .parameters[0];
-    applicantsName = cvString.split('\n')[1];
+    applicantsName = cvString.split('\n')[0];
   }
   CVInfoGroup? _getInfoGroup(String infoGroupName) {
     for (CVInfoGroup infoGroup in infoGroups) {

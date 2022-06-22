@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:first_val_product/widgets/bottom_button_widget.dart';
+import 'package:first_val_product/widgets/circular_progress_widget.dart';
 import 'package:first_val_product/widgets/title_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:first_val_product/widgets/json_holder.dart';
@@ -26,49 +27,60 @@ class MainPage extends StatefulWidget {
     shownCVInfos = [];
   }
 
-  void removeCV(CVInfo cvInfoToRemove) {
+  void removeCV(
+    CVInfo cvInfoToRemove,
+    /*FileWidget file*/
+  ) {
     if (currentCVInfo == cvInfoToRemove) {
       chooseCV(cvInfoToRemove);
     }
     allCVInfos.remove(cvInfoToRemove);
-    currentState.setState(() {});
-  }
-
-  void chooseCV(CVInfo cvInfo) {
-    if (currentCVInfo == cvInfo) {
-      currentCVInfo = null;
-      displayWidget = const EmptyWidget();
-    } else {
-      currentCVInfo = cvInfo;
-      displayWidget = JsonHolder(text: cvInfo.coolText);
-    }
-    currentState.setState(() {});
-  }
-
-  void addResume() async {
-    print("Adding new CV");
-    List<CVInfo> newCVs = await getCVInfos();
-    for (var cv in newCVs) {
-      currentCVInfo = cv;
-      allCVInfos.add(currentCVInfo!);
-      displayWidget = JsonHolder(text: currentCVInfo!.coolText);
-      fileWidgets.add(FileWidget(cvInfo: currentCVInfo!));
-    }
+    //fileWidgets.remove(file);
     clearSearchBox();
     currentState.setState(() {});
   }
 
-  void exportOne() async {
-    print("Exporting $currentCVInfo");
-    await currentCVInfo?.export(postfix: "");
+  void chooseCV(CVInfo cvInfo) {
+    /* Color color;*/
+    if (currentCVInfo == cvInfo) {
+      currentCVInfo = null;
+      displayWidget = const EmptyWidget();
+      //print(file.colors.toString());
+      /*color = Color(0xFF4D6658);*/
+      //file?.colors= Color(0xFF4D6658);
+    } else {
+      currentCVInfo = cvInfo;
+      displayWidget = JsonHolder(text: cvInfo.coolText);
+      /*color = Colors.red;*/
+      //file?.colors = Colors.red;
+    }
+    currentState.setState(() {});
   }
 
-  void exportAll() async {
+  // void addResume() async {
+  //   print("Adding new CV");
+  //   List<CVInfo> newCVs = await getCVInfos();
+  //   for (var cv in newCVs) {
+  //     currentCVInfo = cv;
+  //     allCVInfos.add(currentCVInfo!);
+  //     displayWidget = JsonHolder(text: currentCVInfo!.coolText);
+  //     fileWidgets.add(FileWidget(cvInfo: currentCVInfo!));
+  //   }
+  //   clearSearchBox();
+  //   currentState.setState(() {});
+  // }
+
+  /*void exportOne() async {
+    print("Exporting $currentCVInfo");
+    await currentCVInfo?.export(postfix: "");
+  }*/
+
+  /*void exportAll() async {
     print("Exporting ${allCVInfos.length} CVs");
     for (var i = 0; i < allCVInfos.length; i++) {
       await currentCVInfo?.export(postfix: "-$i");
     }
-  }
+  }*/
 
   void findCVsByParameter(String parameter) {
     shownCVInfos = [];
@@ -91,6 +103,66 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  bool isLoading = false;
+
+  SnackBar snackBarForAdding = SnackBar(
+    content: Text('Successfully added resume!'),
+    duration: Duration(seconds: 1),
+  );
+
+  SnackBar snackBarForExportOne = SnackBar(
+    content: Text('Successfully exported resume!'),
+    duration: Duration(seconds: 1),
+  );
+
+  SnackBar snackBarForExportAll = SnackBar(
+    content: Text('Successfully exported resumes!'),
+    duration: Duration(seconds: 1),
+  );
+
+  SnackBar snackBarForDeletedResume = SnackBar(
+    content: Text('Resume has been deleted!'),
+    duration: Duration(seconds: 1),
+  );
+
+  void exportAll() async {
+    print("Exporting ${widget.allCVInfos.length} CVs");
+    for (var i = 0; i < widget.allCVInfos.length; i++) {
+      await widget.currentCVInfo?.export(postfix: "-$i");
+    }
+    ScaffoldMessenger.of(context).showSnackBar(snackBarForExportAll);
+  }
+
+  void exportOne() async {
+    print("Exporting $widget.currentCVInfo");
+    await widget.currentCVInfo?.export(postfix: "");
+    ScaffoldMessenger.of(context).showSnackBar(snackBarForExportOne);
+  }
+
+  void addResume() async {
+    bool flag = false;
+    print("Adding new CV");
+    setState(() {
+      isLoading = true;
+    });
+    List<CVInfo> newCVs = await getCVInfos();
+    for (var cv in newCVs) {
+      widget.currentCVInfo = cv;
+      widget.allCVInfos.add(widget.currentCVInfo!);
+      widget.displayWidget = JsonHolder(text: widget.currentCVInfo!.coolText);
+      widget.fileWidgets.add(FileWidget(cvInfo: widget.currentCVInfo!));
+      flag = true;
+    }
+    widget.clearSearchBox();
+    setState(() {
+      isLoading = false;
+    });
+    if (widget.fileWidgets.isNotEmpty && flag) {
+      ScaffoldMessenger.of(context).showSnackBar(snackBarForAdding);
+    }
+    widget.currentState.setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     widget.currentState = this;
@@ -115,7 +187,7 @@ class _MainPageState extends State<MainPage> {
     }
 
     return Scaffold(
-        backgroundColor: const Color.fromRGBO(251, 253, 247, 1),
+        backgroundColor: const Color(0xFFFBFDF7),
         body: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -125,7 +197,9 @@ class _MainPageState extends State<MainPage> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   TitleWidget(),
-                  Expanded(child: widget.displayWidget),
+                  isLoading
+                      ? Expanded(child: CircularWidget())
+                      : Expanded(child: widget.displayWidget),
                 ],
               ),
             ) /*)*/
@@ -149,6 +223,10 @@ class _MainPageState extends State<MainPage> {
                         child: SizedBox(
                             height: MediaQuery.of(context).size.width * 0.3,
                             child: SingleChildScrollView(
+                                controller: ScrollController(
+                                    //initialScrollOffset: 40,
+                                    //keepScrollOffset: false
+                                    ),
                                 scrollDirection: Axis.vertical,
                                 child: Column(
                                     mainAxisAlignment:
@@ -171,11 +249,14 @@ class _MainPageState extends State<MainPage> {
             BottomButtonWidget(
                 text: "Add Resume",
                 onPressed: () {
-                  widget.addResume();
+                  // widget.addResume();
+                  addResume();
                   setState(() {});
                 }),
-            BottomButtonWidget(text: "Export", onPressed: widget.exportOne),
-            BottomButtonWidget(text: "Export All", onPressed: widget.exportAll),
+            BottomButtonWidget(
+                text: "Export", onPressed: exportOne /*widget.exportOne*/),
+            BottomButtonWidget(
+                text: "Export All", onPressed: exportAll /*widget.exportAll*/),
           ],
         ));
   }
