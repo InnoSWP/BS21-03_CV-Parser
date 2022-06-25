@@ -1,3 +1,4 @@
+import 'package:first_val_product/main_page.dart';
 import 'package:flutter/material.dart';
 
 class SearchWidget extends StatefulWidget {
@@ -8,6 +9,12 @@ class SearchWidget extends StatefulWidget {
 }
 
 class _SearchWidgetState extends State<SearchWidget> {
+  void clearSearchBox() {
+    MainPage.instance.clearSearchBox();
+    _controller.clear();
+  }
+
+  final _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -23,48 +30,24 @@ class _SearchWidgetState extends State<SearchWidget> {
       ),
       child: Center(
         child: TextField(
+          controller: _controller,
+          onSubmitted: (s) => MainPage.instance.findCVsByParameter(s),
           decoration: InputDecoration(
-              prefixIcon: Icon(Icons.search, size: MediaQuery.of(context).size.width * 0.016,),
+              prefixIcon: Icon(
+                Icons.search,
+                size: MediaQuery.of(context).size.width * 0.016,
+              ),
               suffixIcon: IconButton(
-                icon: Icon(Icons.clear, size: MediaQuery.of(context).size.width * 0.013,),
-                onPressed: () {
-                  /* Clear the search field */
-                },
+                icon: Icon(
+                  Icons.clear,
+                  size: MediaQuery.of(context).size.width * 0.013,
+                ),
+                onPressed: clearSearchBox,
               ),
               hintText: 'Search...',
               border: InputBorder.none),
         ),
-      )
-      /*ElevatedButton.icon(
-        onPressed: () {},
-        icon: Icon(
-          size: MediaQuery.of(context).size.width * 0.015,
-          Icons.search,
-          color: const Color.fromRGBO(73, 69, 79, 1),
-        ),
-        label: Text(
-          'search',
-          style: TextStyle(
-            color: const Color.fromRGBO(73, 69, 79, 1),
-            fontFamily: 'Marriweather',
-            fontSize: MediaQuery.of(context).size.width * 0.01,
-          ),
-        ),
-        style: ButtonStyle(
-          shape:
-          MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(20.0),
-            ),
-          ),
-          //minimumSize: MaterialStateProperty.all(const Size(140, 50)),
-          backgroundColor:
-          MaterialStateProperty.all(Colors.transparent),
-          shadowColor:
-          MaterialStateProperty.all(Colors.transparent),
-        ),
-      )*/
-      ,
+      ),
     );
   }
 }
