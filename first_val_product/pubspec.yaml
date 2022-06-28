@@ -27,6 +27,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  coverage: "^1.0.1"
   flutter:
     sdk: flutter
   read_pdf_text: ^0.2.1
@@ -45,6 +46,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   responsive_builder: ^0.4.2
   dio: ^4.0.6
+  firebase_core_desktop: ^1.0.0
+  test: ^1.21.1
 
 dev_dependencies:
   flutter_test:

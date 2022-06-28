@@ -1,11 +1,11 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class BottomButtonWidget extends StatelessWidget {
   final String text;
   final void Function() onPressed;
-  BottomButtonWidget({required this.text, required this.onPressed});
+  const BottomButtonWidget(
+      {Key? key, required this.text, required this.onPressed})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(

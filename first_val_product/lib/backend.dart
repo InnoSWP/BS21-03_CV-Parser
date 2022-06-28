@@ -26,7 +26,10 @@ class CVInfo {
   CVInfo(this.cvString, this.fileName, this.infoGroups) {
     applicantsName = cvString.split('\n')[1];
     applicantsEmail = infoGroups[0].parameters.firstWhere(
-        (element) => element.contains("@"),
+        (element) =>
+            element.contains("@") &&
+            element.indexOf('@') - 1 > 0 &&
+            element[element.indexOf('@') - 1] != ' ',
         orElse: () => "No email found");
     coolText = "";
     json = "[\n";
@@ -54,9 +57,9 @@ class CVInfo {
     return null;
   }
 
-  Future export({required String postfix}) async {
+  Future export({String? postfix}) async {
+    postfix ??= "";
     Directory directory = await getApplicationDocumentsDirectory();
-    print("${directory.path}\\$fileName.json");
     File newFile = File(
         "${directory.path}\\${fileName.replaceRange(fileName.length - 4, fileName.length, "")}$postfix.json");
     await newFile.writeAsString(json);
@@ -130,8 +133,6 @@ List<CVInfoGroup> _infoGroupsWithoutAPI(String text) {
   List<String> splitStrings = text
       .replaceRange(text.length - 1, text.length, '')
       .replaceRange(0, 1, '')
-      .replaceAll('\n', '')
-      .replaceAll('\r', '')
       .replaceAll("\\\\n", "")
       .replaceAll("\\\\t", "")
       .replaceAll("\\t", "")
@@ -139,7 +140,23 @@ List<CVInfoGroup> _infoGroupsWithoutAPI(String text) {
       .split('\\n');
   {
     List<String> temp = [];
-    splitStrings.forEach((element) => temp.addAll(element.split('\n')));
+    for (var element in splitStrings) {
+      temp.addAll(element.split('\n'));
+    }
+    splitStrings = temp;
+  }
+  {
+    List<String> temp = [];
+    for (var element in splitStrings) {
+      temp.addAll(element.split('\r'));
+    }
+    splitStrings = temp;
+  }
+  {
+    List<String> temp = [];
+    for (var element in splitStrings) {
+      temp.addAll(element.split('\r\n'));
+    }
     splitStrings = temp;
   }
   List<String> personalInfo = [splitStrings[1]];
@@ -175,7 +192,6 @@ List<CVInfoGroup> _infoGroupsWithoutAPI(String text) {
   CVInfoGroup? currentInfoGroup;
   splitStrings.removeWhere((element) => element.replaceAll(' ', "").isEmpty);
   for (var i = 3; i < splitStrings.length - 1; i++) {
-    print(splitStrings[i]);
     CVInfoGroup? tempInfoGroup = keywordToGroupMap.entries
         .firstWhere(
           (element) => splitStrings[i].contains(element.key),
