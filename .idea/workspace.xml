@@ -4,11 +4,22 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1d5b69b2-7fd3-43f5-8661-776c97157f05" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/BS21-03_CV-Parser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BS21-03_CV-Parser.iml" afterDir="false" />
+    <list default="true" id="1d5b69b2-7fd3-43f5-8661-776c97157f05" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2022,_15_54_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2022__15_54__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/lib/pages/json_holder.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/pages/json_holder.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/lib/pages/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/pages/main_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_val_product/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_val_product/lib/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/main_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_val_product/lib/widgets/file_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/widgets/file_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_val_product/lib/widgets/json_holder.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/widgets/json_holder.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_val_product/lib/widgets/json_holder_box.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/widgets/json_holder_box.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_val_product/lib/widgets/title_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/widgets/title_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_val_product/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_val_product/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_val_product/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/first_val_product/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +36,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="MVPs" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,6 +48,17 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/first_val_product/lib/generated_plugin_registrant.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/first_val_product/lib/widgets/title_widget.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/first_val_product/lib/widgets/bottom_button_widget.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/first_val_product/lib/widgets/empty_widget.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/first_val_product/lib/widgets/json_holder.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/first_val_product/pubspec.yaml" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/first_val_product/lib/widgets/file_widget.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/first_val_product/lib/main_page.dart" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/first_val_product/lib/backend.dart" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2AL5MqM1C8Ck9fdg7GncwQU9kg5" />
   <component name="ProjectViewState">
@@ -54,6 +76,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/OurApp" />
+    </key>
   </component>
   <component name="RunManager" selected="Flutter.main.dart">
     <configuration name="main.dart" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application" nameIsGenerated="true">

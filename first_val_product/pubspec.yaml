@@ -35,12 +35,16 @@ dependencies:
   pdf_text: ^0.5.0
   syncfusion_flutter_pdf: ^20.1.59-beta
   flutter_file_saver: any
+  firebase_core: ^1.17.1
+  firebase_storage: ^10.2.17
+  cloud_firestore: ^3.1.17
   
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   responsive_builder: ^0.4.2
+  dio: ^4.0.6
 
 dev_dependencies:
   flutter_test:

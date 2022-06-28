@@ -12,17 +12,19 @@ class JsonHolder extends StatelessWidget {
     for (var cvInfoGroup in MainPage.instance.currentCVInfo!.infoGroups) {
       jsonHolderBoxes.add(JsonHolderBox(infoGroup: cvInfoGroup));
     }
-    String appName = MainPage.instance.currentCVInfo!.applicantsEmail!;
+    String appEmail = MainPage.instance.currentCVInfo!.applicantsEmail!;
+    String appName = MainPage.instance.currentCVInfo!.infoGroups[0].parameters[0];
+
     return Container(
         margin: const EdgeInsets.all(20.0),
         decoration: const BoxDecoration(color: Colors.transparent),
         child: SizedBox(
-            //height: double.infinity,
+          //height: double.infinity,
             child: SingleChildScrollView(
                 controller: ScrollController(
-                    //initialScrollOffset: 40,
-                    //keepScrollOffset: false
-                    ),
+                  //initialScrollOffset: 40,
+                  //keepScrollOffset: false
+                ),
                 scrollDirection: Axis.vertical,
                 child: Column(
                   children: [
@@ -34,13 +36,17 @@ class JsonHolder extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
-                                appName,
+                              Expanded(child: ListTile(
+                                title: Text(appName, style: TextStyle(fontSize: 30, fontFamily: 'Marriweather', color: Color(0xFF49454F)),),
+                                subtitle: Text(appEmail, style: TextStyle(fontSize: 15, fontFamily: 'Marriweather', color: Color(0xFF49454F)),),
+                              ))
+                              /*Text(
+                                appEmail,
                                 style: TextStyle(
                                     fontSize: 30,
                                     fontFamily: 'Marriweather',
                                     color: Color(0xFF49454F)),
-                              ),
+                              )*/,
                               Icon(
                                 Icons.person_outline,
                                 size: 60,
@@ -62,14 +68,14 @@ class JsonHolder extends StatelessWidget {
                   /*children:
                 jsonHolderBoxes,*/
                 )
-                //   Text(
-                // text,
-                // style: const TextStyle(
-                //   fontFamily: 'Marriweather',
-                //   fontSize: 50,
-                //   color: Color.fromRGBO(73, 69, 79, 1),
-                // ),
-                //),
-                )));
+              //   Text(
+              // text,
+              // style: const TextStyle(
+              //   fontFamily: 'Marriweather',
+              //   fontSize: 50,
+              //   color: Color.fromRGBO(73, 69, 79, 1),
+              // ),
+              //),
+            )));
   }
 }

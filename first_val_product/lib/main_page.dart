@@ -11,6 +11,8 @@ import 'package:first_val_product/widgets/empty_widget.dart';
 
 class MainPage extends StatefulWidget {
   static const int filesPerRow = 2;
+  late bool change = false;
+  late String toFind = '';
   static late MainPage instance;
   late State<MainPage> currentState;
   CVInfo? currentCVInfo;
@@ -84,8 +86,18 @@ class MainPage extends StatefulWidget {
 
   void findCVsByParameter(String parameter) {
     shownCVInfos = [];
+    var param = [];
+    param = parameter.replaceAll(',',' ').replaceAll(';',' ').split(' ');
+    change = true;
+    toFind = parameter;
     for (var cvInfo in allCVInfos) {
-      if (cvInfo.searchFor(parameter)) {
+      bool flag = true;
+      for(int i=0; i<param.length; i++){
+        if(!cvInfo.searchFor(param[i])){
+          flag = false;
+        }
+      }
+      if (/*cvInfo.searchFor(parameter)*/ flag) {
         shownCVInfos.add(cvInfo);
       }
     }
@@ -93,6 +105,8 @@ class MainPage extends StatefulWidget {
   }
 
   void clearSearchBox() {
+    change = false;
+    toFind = '';
     shownCVInfos = [];
     shownCVInfos.addAll(allCVInfos);
     currentState.setState(() {});
@@ -214,13 +228,78 @@ class _MainPageState extends State<MainPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SearchWidget(),
+                  SizedBox(height: 20,),
                   Expanded(
                     child: Container(
                         margin: const EdgeInsets.all(20.0),
                         padding: const EdgeInsets.all(5),
                         decoration:
                             const BoxDecoration(color: Colors.transparent),
-                        child: SizedBox(
+                        /*child: SizedBox(
+                            height: MediaQuery.of(context).size.width * 0.3,*/
+                            child: fileWidgetHolderChildren.isEmpty
+                                ? (widget.allCVInfos.isEmpty
+                                    ? Expanded(
+                                        child: Container(
+                                        child: Center(
+                                          child: Text(
+                                            'No Uploaded Resumes ',
+                                            style: TextStyle(
+                                              fontSize: 25,
+                                              color: Color(0xFF49454F),
+                                              fontFamily: 'Marriweather',
+                                            ),
+                                          ),
+                                        ),
+                                      ))
+                                    : Container(
+                                        child: Center(
+                                          child: Text(
+                                            'No results',
+                                            style: TextStyle(
+                                              fontSize: 25,
+                                              color: Color(0xFF49454F),
+                                              fontFamily: 'Marriweather',
+                                            ),
+                                          ),
+                                        ),
+                                      ))
+                                : SingleChildScrollView(
+                                    controller: ScrollController(
+                                        //initialScrollOffset: 40,
+                                        //keepScrollOffset: false
+                                        ),
+                                    scrollDirection: Axis.vertical,
+                                    child: widget.change
+                                        ? Column(
+                                            children: [
+                                               Text(
+                                                  'The Query "' +
+                                                      widget.toFind +
+                                                      '" Found:',
+                                                  style:
+                                                      TextStyle(fontSize: 20, color: Color(0xFF49454F),
+                                                        fontFamily: 'Marriweather',),
+                                                ),
+
+                                              SizedBox(height: 20,),
+                                              Column(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children:
+                                                      fileWidgetHolderChildren)
+                                            ],
+                                          )
+                                        : Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceEvenly,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children:
+                                                fileWidgetHolderChildren))) /*SizedBox(
                             height: MediaQuery.of(context).size.width * 0.3,
                             child: SingleChildScrollView(
                                 controller: ScrollController(
@@ -233,8 +312,9 @@ class _MainPageState extends State<MainPage> {
                                         MainAxisAlignment.spaceEvenly,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-                                    children: fileWidgetHolderChildren)))),
-                  ),
+                                    children: fileWidgetHolderChildren)))*/
+                        ),
+                  /*),*/
                   SizedBox(
                     height: MediaQuery.of(context).size.width * 0.03,
                   )

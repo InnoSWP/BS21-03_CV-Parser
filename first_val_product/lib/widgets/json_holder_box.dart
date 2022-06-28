@@ -4,6 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:convert';
+
 
 class JsonHolderBox extends StatefulWidget {
   final CVInfoGroup infoGroup;
@@ -14,11 +17,98 @@ class JsonHolderBox extends StatefulWidget {
 }
 
 class _JsonHolderBoxState extends State<JsonHolderBox> {
-  void _showDialog() {
-    Future.delayed(const Duration(microseconds: 10), () {
-      showDialog(
+  String name='';
+  final CollectionReference parserErrors =
+  FirebaseFirestore.instance.collection('parserErrors');
+  String jsonString=  '"match": "research","label": "CsSkill", "sentence": "", "reason": "user should write a reson why he is reporting this" ';
+  void _sendError(String info, String sentence, String reason) async {
+    String jsonString = '{"match" : "$sentence","label":"$info","sentence":"","reason":"$reason"}';
+    Map<String, dynamic> d = json.decode(jsonString.trim());
+    //this.name='';
+    await parserErrors.add(d);
+    _showSimpleDialog();
+    //this.name='';
+  }
+
+  late TextEditingController controller;
+  @override
+  void initState(){
+    super.initState();
+    controller = TextEditingController();
+  }
+  @override
+  void dispose(){
+    controller.dispose();
+    super.dispose();
+  }
+
+  /*void _reportError() async {
+    String jsonString = response.toString();
+    Map<String, dynamic> d = json.decode(jsonString.trim());
+    await favouriteJokes.add(d);
+  }*/
+  void submit(){Navigator.of(context).pop(controller.text);
+  controller.clear();}
+
+  Future<void> _showSimpleDialog() async {
+    await showDialog<void>(
+        context: context,
+        builder: (BuildContext context) {
+          return SimpleDialog( // <-- SEE HERE
+            title: const Text('Thank You For Helping Us Develop!', style: TextStyle(
+              color: Color(0xFF864921),
+              fontFamily: 'Marriweather',
+            )),
+            children: <Widget>[
+              Row(mainAxisAlignment: MainAxisAlignment.end, children: [TextButton(onPressed: (){Navigator.of(context).pop();} , child:const Text('close', style: TextStyle(
+                color: Color(0xFF864921),
+                fontFamily: 'Marriweather',
+              )))],)
+              /*SimpleDialogOption(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Row(mainAxisAlignment: MainAxisAlignment.end, children: [const Text('close', style: TextStyle(
+                  color: Color(0xFF864921),
+                  fontFamily: 'Marriweather',
+                ))],) ,
+              ),*/
+            ],
+          );
+        });
+  }
+  
+  Future<String?> _showDialog()  =>
+      showDialog<String>(
           context: context,
-          builder: (_) => SimpleDialog(
+          builder: (context) => AlertDialog(
+            title: Text('Do you want to report an error?', style: TextStyle(
+              fontSize: 25,
+              color: Color(0xFF864921),
+              fontFamily: 'Marriweather',
+            )),
+            content: TextField(
+              autofocus: true,
+              decoration: InputDecoration(hintText: 'Enter an error'),
+              controller: controller,
+            ),
+            actions: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  TextButton(onPressed: (){ Navigator.pop(context);}, child: Text('CLOSE', style: TextStyle(
+                    color: Color(0xFF864921),
+                    fontFamily: 'Marriweather',
+                  ))),
+                  TextButton(onPressed: submit, child: Text('SUBMIT', style: TextStyle(
+                    color: Color(0xFF864921),
+                    fontFamily: 'Marriweather',
+                  ))),
+                ],
+              )
+            ],
+          )
+        /*SimpleDialog(
                 backgroundColor: const Color(0xFFFBFDF7),
                 title: const Center(
                   child: Text(
@@ -58,9 +148,9 @@ class _JsonHolderBoxState extends State<JsonHolderBox> {
                                   size: 15,
                                 )
                               ],
-                            ) /*Center(
+                            ) *//*Center(
                         child: Text('yes', style: TextStyle(fontFamily: 'Marriweather',),),
-                      ),*/
+                      ),*//*
                             ),
                       ),
                       ElevatedButton(
@@ -91,9 +181,9 @@ class _JsonHolderBoxState extends State<JsonHolderBox> {
                     ],
                   )
                 ],
-              ));
-    });
-  }
+              )*/);
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -120,15 +210,46 @@ class _JsonHolderBoxState extends State<JsonHolderBox> {
                   padding: const EdgeInsets.all(15),
                   shrinkWrap: true,
                   itemBuilder: (BuildContext context, int index) {
-                    return Row(
+                    return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(widget.infoGroup.parameters[index],
+                              softWrap: true,
+                              style: const TextStyle(
+                                fontFamily: 'Marriweather',
+                                fontSize: 20,
+                                color: Color(0xFF49454F),
+                              )),
+                          TextButton(onPressed: () async {
+                            final name =  await _showDialog();
+                            if(name==null || name.isEmpty) return;
+                            setState(() =>this.name = name);
+                            _sendError(widget.infoGroup.name, widget.infoGroup.parameters[index], this.name);
+                          }, child: Text('Data Is Incorrect?', style: TextStyle(color: Color.fromRGBO(134, 73, 33, 1.0), fontFamily: 'Marriweather',),)),
+
+                          /*IconButton(
+                              splashRadius: 30,
+                              onPressed: () {
+                                _showDialog();
+                              },
+                              icon: const Icon(
+                                Icons.edit,
+                                color: Color(0xFF864921),
+                              ))*/
+                        ],
+                      )
+                        /*return Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(widget.infoGroup.parameters[index],
-                            style: const TextStyle(
-                              fontFamily: 'Marriweather',
-                              fontSize: 20,
-                              color: Color(0xFF49454F),
-                            )),
+                        SizedBox(
+                          child: Text(widget.infoGroup.parameters[index],
+                              softWrap: true,
+                              style: const TextStyle(
+                                fontFamily: 'Marriweather',
+                                fontSize: 20,
+                                color: Color(0xFF49454F),
+                              )),
+                        ),
                         IconButton(
                             splashRadius: 30,
                             onPressed: () {
@@ -139,7 +260,8 @@ class _JsonHolderBoxState extends State<JsonHolderBox> {
                               color: Color(0xFF864921),
                             ))
                       ],
-                    );
+                    )*/
+                        ;
                   },
                   separatorBuilder: (context, index) {
                     return const Divider(

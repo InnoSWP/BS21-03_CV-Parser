@@ -13,7 +13,7 @@ class TitleWidget extends StatelessWidget {
           child: const Text(
             'iExtract',
             style: TextStyle(
-                fontSize: 70,
+                fontSize: 50,
                 fontFamily: 'Eczar',
                 color: Color.fromRGBO(134, 73, 33, 1.0)),
           ),

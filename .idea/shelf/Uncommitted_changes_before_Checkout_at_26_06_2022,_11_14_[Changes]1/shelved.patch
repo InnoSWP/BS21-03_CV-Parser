@@ -1,0 +1,84 @@
+Index: first_val_product/lib/widgets/title_widget.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import 'package:flutter/material.dart';\n\nclass TitleWidget extends StatelessWidget {\n  const TitleWidget({Key? key}) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Column(\n      children: [\n        Container(\n          margin: const EdgeInsets.all(2.0),\n          padding: const EdgeInsets.only(left: 30),\n          child: const Text(\n            'iExtract',\n            style: TextStyle(\n                fontSize: 70,\n                fontFamily: 'Eczar',\n                color: Color.fromRGBO(134, 73, 33, 1.0)),\n          ),\n        ),\n        Container(\n          padding: const EdgeInsets.only(left: 30),\n          child: Container(\n            width: MediaQuery.of(context).size.width * 0.6,\n            height: 1,\n            color: const Color.fromRGBO(73, 69, 79, 1),\n          ),\n        )\n      ],\n    );\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/first_val_product/lib/widgets/title_widget.dart b/first_val_product/lib/widgets/title_widget.dart
+--- a/first_val_product/lib/widgets/title_widget.dart	
++++ b/first_val_product/lib/widgets/title_widget.dart	
+@@ -15,7 +15,7 @@
+             style: TextStyle(
+                 fontSize: 70,
+                 fontFamily: 'Eczar',
+-                color: Color.fromRGBO(134, 73, 33, 1.0)),
++                color: Color(0xFF7A370B)),
+           ),
+         ),
+         Container(
+Index: first_val_product/lib/widgets/bottom_button_widget.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import 'dart:ui';\n\nimport 'package:flutter/material.dart';\n\nclass BottomButtonWidget extends StatelessWidget {\n  final String text;\n  final void Function() onPressed;\n  BottomButtonWidget({required this.text, required this.onPressed});\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n        height: MediaQuery.of(context).size.width * 0.04,\n        margin: const EdgeInsets.all(5),\n        padding: const EdgeInsets.all(10.0),\n        decoration: BoxDecoration(\n          color: const Color.fromRGBO(77, 102, 88, 1),\n          borderRadius: BorderRadius.circular(20),\n          border: Border.all(\n            width: 0.5,\n            color: const Color.fromRGBO(73, 69, 79, 1.0),\n          ),\n        ),\n        child: RawMaterialButton(\n          shape: const CircleBorder(),\n          elevation: 0.0,\n          onPressed: onPressed,\n          child: Text(\n            text,\n            style: TextStyle(\n                color: Colors.white,\n                fontSize: MediaQuery.of(context).size.width * 0.015,\n                fontFamily: 'Marriweather'),\n          ),\n        ));\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/first_val_product/lib/widgets/bottom_button_widget.dart b/first_val_product/lib/widgets/bottom_button_widget.dart
+--- a/first_val_product/lib/widgets/bottom_button_widget.dart	
++++ b/first_val_product/lib/widgets/bottom_button_widget.dart	
+@@ -13,7 +13,7 @@
+         margin: const EdgeInsets.all(5),
+         padding: const EdgeInsets.all(10.0),
+         decoration: BoxDecoration(
+-          color: const Color.fromRGBO(77, 102, 88, 1),
++          color: const Color(0xFF4D6658),
+           borderRadius: BorderRadius.circular(20),
+           border: Border.all(
+             width: 0.5,
+Index: first_val_product/lib/widgets/empty_widget.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import 'package:flutter/material.dart';\n\nclass EmptyWidget extends StatelessWidget {\n  const EmptyWidget({Key? key}) : super(key: key);\n  @override\n  Widget build(BuildContext context) {\n    return Column(\n      mainAxisAlignment: MainAxisAlignment.center,\n      children: [\n        Center(\n          child: Container(\n            child: Text(\n              'Select a resume to view the information',\n              textAlign: TextAlign.center,\n              style: TextStyle(\n                fontSize: 40,\n                fontFamily: 'Marriweather',\n              ),\n            ),\n          ),\n        )\n      ],\n    );\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/first_val_product/lib/widgets/empty_widget.dart b/first_val_product/lib/widgets/empty_widget.dart
+--- a/first_val_product/lib/widgets/empty_widget.dart	
++++ b/first_val_product/lib/widgets/empty_widget.dart	
+@@ -14,6 +14,7 @@
+               textAlign: TextAlign.center,
+               style: TextStyle(
+                 fontSize: 40,
++                color: Color(0xFF49454F),
+                 fontFamily: 'Marriweather',
+               ),
+             ),
+Index: first_val_product/lib/widgets/file_widget.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import 'package:first_val_product/backend.dart';\nimport 'package:first_val_product/main_page.dart';\nimport 'package:flutter/material.dart';\n\nclass FileWidget extends StatelessWidget {\n  final CVInfo cvInfo;\n  const FileWidget({required this.cvInfo, Key? key}) : super(key: key);\n\n  @override\n  Widget build(BuildContext context) {\n    return Container(\n      padding: const EdgeInsets.all(5),\n      height: 180,\n      width: 140,\n      decoration: BoxDecoration(\n        color: Colors.transparent,\n        border: Border.all(color: const Color.fromRGBO(73, 69, 79, 1)),\n      ),\n      child: Column(\n        mainAxisAlignment: MainAxisAlignment.start,\n        crossAxisAlignment: CrossAxisAlignment.center,\n        children: [\n          Container(\n            width: double.infinity,\n            height: 20,\n            color: Colors.transparent,\n            alignment: Alignment.topRight,\n            child: IconButton(\n              iconSize: 18,\n              splashRadius: 9,\n              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),\n              icon: const Icon(\n                Icons.close,\n                color: Color.fromRGBO(73, 69, 79, 1),\n                size: 18,\n              ),\n              onPressed: () => MainPage.instance.removeCV(cvInfo),\n            ),\n          ),\n          Container(\n            width: double.infinity,\n            height: 118,\n            child: IconButton(\n              splashRadius: 65,\n              onPressed: () => MainPage.instance.chooseCV(cvInfo),\n              icon: const Icon(Icons.insert_drive_file_outlined,\n                  color: Color.fromRGBO(77, 102, 88, 1), size: 100),\n            ),\n          ),\n          Container(\n            width: double.infinity,\n            height: 30,\n            color: Colors.transparent,\n            alignment: Alignment.center,\n            child: Text(\n              cvInfo.fileName.split('.')[0],\n              style: const TextStyle(\n                  color: Color.fromRGBO(73, 69, 79, 1),\n                  fontFamily: 'Marriweather',\n                  fontSize: 18),\n            ),\n          ),\n        ],\n      ),\n    );\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/first_val_product/lib/widgets/file_widget.dart b/first_val_product/lib/widgets/file_widget.dart
+--- a/first_val_product/lib/widgets/file_widget.dart	
++++ b/first_val_product/lib/widgets/file_widget.dart	
+@@ -34,7 +34,7 @@
+                 color: Color.fromRGBO(73, 69, 79, 1),
+                 size: 18,
+               ),
+-              onPressed: () => MainPage.instance.removeCV(cvInfo),
++              onPressed: () => MainPage.instance.removeCV(cvInfo, ),
+             ),
+           ),
+           Container(
+@@ -44,7 +44,7 @@
+               splashRadius: 65,
+               onPressed: () => MainPage.instance.chooseCV(cvInfo),
+               icon: const Icon(Icons.insert_drive_file_outlined,
+-                  color: Color.fromRGBO(77, 102, 88, 1), size: 100),
++                  color: Color(0xFF4D6658), size: 100),
+             ),
+           ),
+           Container(

@@ -2,12 +2,25 @@ import 'package:first_val_product/backend.dart';
 import 'package:first_val_product/main_page.dart';
 import 'package:flutter/material.dart';
 
-class FileWidget extends StatelessWidget {
+import 'json_holder.dart';
+
+class FileWidget extends StatefulWidget {
   final CVInfo cvInfo;
   const FileWidget({required this.cvInfo, Key? key}) : super(key: key);
 
   @override
+  State<FileWidget> createState() => _FileWidgetState();
+  //late State<FileWidget> currentState;
+}
+
+class _FileWidgetState extends State<FileWidget> {
+
+  @override
   Widget build(BuildContext context) {
+     bool flag = MainPage.instance.currentCVInfo==widget.cvInfo;
+    this.setState(() {
+      flag= MainPage.instance.currentCVInfo==widget.cvInfo;
+    });
     return Container(
       padding: const EdgeInsets.all(5),
       height: 180,
@@ -34,17 +47,21 @@ class FileWidget extends StatelessWidget {
                 color: Color.fromRGBO(73, 69, 79, 1),
                 size: 18,
               ),
-              onPressed: () => MainPage.instance.removeCV(cvInfo),
+              onPressed: () => MainPage.instance.removeCV(widget.cvInfo),
             ),
           ),
           Container(
             width: double.infinity,
             height: 118,
             child: IconButton(
+              //autofocus: true,
               splashRadius: 65,
-              onPressed: () => MainPage.instance.chooseCV(cvInfo),
-              icon: const Icon(Icons.insert_drive_file_outlined,
-                  color: Color.fromRGBO(77, 102, 88, 1), size: 100),
+              onPressed: () => {MainPage.instance.chooseCV(widget.cvInfo),
+                setState((){
+                  flag = (MainPage.instance.currentCVInfo==widget.cvInfo );
+          })},
+              icon: Icon(Icons.insert_drive_file_outlined,
+                  color: flag ? Color.fromRGBO(134, 73, 33, 1.0) : Color.fromRGBO(77, 102, 88, 1) , size: 100),
             ),
           ),
           Container(
@@ -53,7 +70,7 @@ class FileWidget extends StatelessWidget {
             color: Colors.transparent,
             alignment: Alignment.center,
             child: Text(
-              cvInfo.fileName.split('.')[0],
+              widget.cvInfo.fileName.split('.')[0],
               style: const TextStyle(
                   color: Color.fromRGBO(73, 69, 79, 1),
                   fontFamily: 'Marriweather',
