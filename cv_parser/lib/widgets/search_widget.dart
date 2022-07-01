@@ -33,18 +33,22 @@ class _SearchWidgetState extends State<SearchWidget> {
           controller: _controller,
           onSubmitted: (s) => MainPage.instance.findCVsByParameter(s),
           decoration: InputDecoration(
-              prefixIcon: Icon(
-                Icons.search,
-                size: MediaQuery.of(context).size.width * 0.016,
-              ),
-              suffixIcon: IconButton(
-                icon: Icon(
-                  Icons.clear,
-                  size: MediaQuery.of(context).size.width * 0.013,
-                ),
-                onPressed: clearSearchBox,
-              ),
-              hintText: 'Search...',
+              prefixIcon: IconTheme(
+                  data: IconThemeData(color: Color(0xFF49454F)),
+                  child: Icon(
+                    Icons.search,
+                    size: MediaQuery.of(context).size.width * 0.016,
+                  )),
+              suffixIcon: IconTheme(
+                  data: IconThemeData(color: Color(0xFF49454F)),
+                  child: IconButton(
+                    icon: Icon(
+                      Icons.clear,
+                      size: MediaQuery.of(context).size.width * 0.013,
+                    ),
+                    onPressed: clearSearchBox,
+                  )),
+              hintText: 'Search CVs By Parameter...',
               border: InputBorder.none),
         ),
       ),

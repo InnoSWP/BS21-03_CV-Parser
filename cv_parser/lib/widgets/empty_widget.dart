@@ -15,6 +15,7 @@ class EmptyWidget extends StatelessWidget {
               style: TextStyle(
                 fontSize: 40,
                 fontFamily: 'Marriweather',
+                color: const Color.fromRGBO(73, 69, 79, 1),
               ),
             ),
           ),

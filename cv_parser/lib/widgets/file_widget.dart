@@ -26,7 +26,8 @@ class _FileWidgetState extends State<FileWidget> {
       width: 140,
       decoration: BoxDecoration(
         color: Colors.transparent,
-        border: Border.all(color: const Color.fromRGBO(73, 69, 79, 1)),
+        border: Border.all(color: const Color.fromRGBO(73, 69, 79, 1),),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -43,7 +44,7 @@ class _FileWidgetState extends State<FileWidget> {
               padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
               icon: const Icon(
                 Icons.close,
-                color: Color.fromRGBO(73, 69, 79, 1),
+                color: Color(0xFF7A370B),//Color.fromRGBO(73, 69, 79, 1),
                 size: 18,
               ),
               onPressed: () => MainPage.instance.removeCV(widget.cvInfo),

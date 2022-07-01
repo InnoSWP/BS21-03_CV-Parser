@@ -197,9 +197,15 @@ class _MainPageState extends State<MainPage> {
                 ],
               ),
             ),
+            Container(
+              height: double.infinity,
+              width: 0.5,
+              color: const Color.fromRGBO(73, 69, 79, 1),
+            ),
             Expanded(
                 child: Container(
-              padding: const EdgeInsets.all(20),
+            //color : Color(0xFFF2EEE1),
+            padding: const EdgeInsets.all(20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -259,6 +265,17 @@ class _MainPageState extends State<MainPage> {
                                               ),
                                             ),
                                             const SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              'Add More Parameters To Find The Most Suitable Resume',
+                                              style: const TextStyle(
+                                                fontSize: 13,
+                                                color:/* Color(0xFF49454F)*/ Color(0xFF864921),
+                                                fontFamily: 'Marriweather',
+                                              ),
+                                            ),
+                                            const SizedBox(
                                               height: 20,
                                             ),
                                             Column(
@@ -268,7 +285,7 @@ class _MainPageState extends State<MainPage> {
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children:
-                                                    fileWidgetHolderChildren)
+                                                    fileWidgetHolderChildren),
                                           ],
                                         )
                                       : Column(

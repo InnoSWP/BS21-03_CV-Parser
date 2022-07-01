@@ -5,21 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d5b69b2-7fd3-43f5-8661-776c97157f05" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/BS21-03_CV-Parser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BS21-03_CV-Parser.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2022,_15_54_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_06_2022__15_54__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/lib/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/main_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/lib/widgets/file_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/widgets/file_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/lib/widgets/json_holder.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/widgets/json_holder.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/lib/widgets/json_holder_box.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/widgets/json_holder_box.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/lib/widgets/title_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/lib/widgets/title_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/first_val_product/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/first_val_product/web/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/ios/Flutter/Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/ios/Flutter/Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/lib/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/main_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/lib/widgets/empty_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/widgets/empty_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/lib/widgets/file_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/widgets/file_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/lib/widgets/json_holder_box.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/widgets/json_holder_box.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/lib/widgets/search_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/widgets/search_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/lib/widgets/title_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/widgets/title_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/macos/Flutter/Flutter-Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/macos/Flutter/Flutter-Debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/macos/Flutter/Flutter-Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/macos/Flutter/Flutter-Release.xcconfig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,17 +47,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/first_val_product/lib/generated_plugin_registrant.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/first_val_product/lib/widgets/title_widget.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/first_val_product/lib/widgets/bottom_button_widget.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/first_val_product/lib/widgets/empty_widget.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/first_val_product/lib/widgets/json_holder.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/first_val_product/pubspec.yaml" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/first_val_product/lib/widgets/file_widget.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/first_val_product/lib/main_page.dart" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/first_val_product/lib/backend.dart" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="ProjectId" id="2AL5MqM1C8Ck9fdg7GncwQU9kg5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -69,6 +56,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
@@ -89,9 +77,13 @@
       <method v="2" />
     </configuration>
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
-      <option name="filePath" value="$PROJECT_DIR$/first_val_product/lib/main.dart" />
+      <option name="filePath" value="$PROJECT_DIR$/cv_parser/lib/main.dart" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Dart Command Line App.main.dart" />
+      <item itemvalue="Flutter.main.dart" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Flutter.main.dart" />

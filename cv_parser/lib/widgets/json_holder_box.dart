@@ -23,13 +23,8 @@ class _JsonHolderBoxState extends State<JsonHolderBox> {
     Map<String, dynamic> d = json.decode(jsonString.trim());
     await parserErrors.add(d);
     _showSimpleDialog();
-    //ScaffoldMessenger.of(context).showSnackBar(snackBarForFlagging);
   }
 
-  SnackBar snackBarForFlagging = const SnackBar(
-    content: Text('Thank you for helping us develop!'),
-    duration: Duration(seconds: 1),
-  );
 
   late TextEditingController controller;
   @override
@@ -72,7 +67,8 @@ class _JsonHolderBoxState extends State<JsonHolderBox> {
                           style: TextStyle(
                             color: Color(0xFF864921),
                             fontFamily: 'Marriweather',
-                          )))
+                          ))),
+                  SizedBox(width: 35,)
                 ],
               )
             ],
@@ -91,7 +87,14 @@ class _JsonHolderBoxState extends State<JsonHolderBox> {
                 )),
             content: TextField(
               autofocus: true,
-              decoration: const InputDecoration(hintText: 'Enter a reason'),
+              decoration: const InputDecoration(hintText: 'Enter a reason',
+                enabledBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFF49454F)),
+                ),
+                focusedBorder: UnderlineInputBorder(
+                  borderSide: BorderSide(color: Color(0xFF49454F)),
+                ),
+              ),
               controller: controller,
             ),
             actions: [
@@ -130,6 +133,7 @@ class _JsonHolderBoxState extends State<JsonHolderBox> {
               color: const Color(0xFFE9F1E8),
               border: Border.all(color: const Color(0xFF49454F), width: 0.2)),
           child: ExpansionTile(
+            iconColor: Color(0xFF49454F),
             initiallyExpanded: true,
             title: Text(
               widget.infoGroup.name,

@@ -11,7 +11,7 @@ class TitleWidget extends StatelessWidget {
           margin: const EdgeInsets.all(2.0),
           padding: const EdgeInsets.only(left: 30),
           child: const Text(
-            'iExtract',
+            'CV Parser Powered By iExtract',
             style: TextStyle(
                 fontSize: 50,
                 fontFamily: 'Eczar',
