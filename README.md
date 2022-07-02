@@ -50,7 +50,12 @@ The [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) helps employers to q
 
 
 <h2 name="framework">Technology</h2>
+In the project we use:
 
+* Frontend - Flutter
+* Backend - Dart
+* Deploy to Firebase
+* iExtract API
 
 
 <h2 name="lincense">License</h2>
