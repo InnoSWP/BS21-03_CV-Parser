@@ -32,9 +32,9 @@ The [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) helps employers to q
 
 <p>The use of web application is very simple. Firstly, you need to upload CVs that you want to analyze.</p>
 <p>Then choose your CV by clicking on it and you will see all the information it contains in a convinient way.</p>
-You can also download your CVs in json file, or search uploaded CVs by some parameters to make the analyze easier.
-By the way, do not forget to report errors! I
-f you see some mistakes or strange text after parsing - report an error, it will help us a lot!
+<p>You can also download your CVs in json file, or search uploaded CVs by some parameters to make the analyze easier.</p>
+<p>By the way, do not forget to report errors!</p>
+<p>If you see some mistakes or strange text after parsing - report an error, it will help us a lot!</p>
 
 
 
