@@ -7,7 +7,6 @@ Our task was to make a [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) a
 [Demo](#demo) |
 [How to use](#use) |
 [Features](#features) |
-[Project Installation](#installation) |
 [Frameworks or technology](#framework) |
 [License](#license)
 
@@ -49,13 +48,6 @@ The [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) helps employers to q
 * Export single or multiple CVs as JSON files
 * Deleting CVs
 
-<h2 name="installation">Installation</h2>
-
-You don't need to install anything - just click the link and enjoy!
-
-<h2 name="framework">Technology</h2>
-
-We used combination of Flatter and Dart to write the web application. For deploy we used Firebase, and for parsing CVs we ued iExtract API.
 
 
 
