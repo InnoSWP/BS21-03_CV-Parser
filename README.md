@@ -25,7 +25,8 @@ The [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) helps employers to q
 
 <h2 name="demo">Demo</h2>
 Start screen of our web application
- ![Start screen image](https://github.com/InnoSWP/BS21-03_CV-Parser/blob/main/startScreen.png?raw=true)
+
+ ![Start screen image](https://github.com/InnoSWP/BS21-03_CV-Parser/blob/main/startScreen.png)
 
 <h2 name="use">How to use</h2>
 
