@@ -49,6 +49,8 @@ The [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) helps employers to q
 
 <h2 name="installation">Installation</h2>
 
+You don't need to install anything - just click the link and enjoy!
+
 <h2 name="framework">Technology</h2>
 
 
