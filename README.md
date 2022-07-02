@@ -24,7 +24,7 @@ The [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) helps employers to q
 <img src="https://github.com/devicons/devicon/blob/master/icons/firebase/firebase-plain-wordmark.svg" title="Firebase" alt="Firebase" width="40" height="40"/>&nbsp; -->
 
 <h2 name="demo">Demo</h2>
-<h1> Start screen of our web application</h1>
+<h3> Start screen of our web application</h3>
 
  ![Start screen image](https://github.com/InnoSWP/BS21-03_CV-Parser/blob/main/startScreen.png)
 
