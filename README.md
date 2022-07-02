@@ -53,6 +53,8 @@ You don't need to install anything - just click the link and enjoy!
 
 <h2 name="framework">Technology</h2>
 
+We used combination of Flatter and Dart to write the web application. For deploy we used Firebase, and for parsing CVs we ued iExtract API.
+
 
 
 <h2 name="lincense">License</h2>
