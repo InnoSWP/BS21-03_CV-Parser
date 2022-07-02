@@ -9,7 +9,7 @@ Our task was to make a CV parser app, that takes a PDF file that contains some C
 [Features](#features) |
 [Project Installation](#installation) |
 [Frameworks or technology](#framework) |
-[Licence](#licence)
+[License](#license)
 
 
 ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
@@ -44,7 +44,7 @@ The [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) helps employers to q
 
 
 
-<h2 name="lincence">Licence</h2>
+<h2 name="lincense">License</h2>
 The MIT License (MIT)
 
 Copyright © 2022 [Danila Kuzmin](https://github.com/BikTracker), [Oksana Konovalova](https://github.com/ksko02), [Sergei Gubin](https://github.com/Uec3), [Yana Pavlova](https://github.com/nytakoe1), [Andrew Milevski](https://github.com/Neph0)
