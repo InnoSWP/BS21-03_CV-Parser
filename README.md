@@ -44,7 +44,7 @@ The [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) helps employers to q
 
 
 
-<h2 name="lincence">Liseince</h2>
+<h2 name="lincence">Licence</h2>
 The MIT License (MIT)
 
 Copyright © 2022 [Danila Kuzmin](https://github.com/BikTracker), [Oksana Konovalova](https://github.com/ksko02), [Sergei Gubin](https://github.com/Uec3), [Yana Pavlova](https://github.com/nytakoe1), [Andrew Milevski](https://github.com/Neph0)
