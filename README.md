@@ -1,6 +1,8 @@
 <h1 align="center"> CV-Parser "iExtract"</h1>
-<!-- Project Description -->
+
 Our task was to make a CV parser app, that takes a PDF file that contains some CV and extracts information about the skills, languages etc.
+
+
 
 [Demo](#demo) |
 [How to use](#use) |
@@ -9,6 +11,13 @@ Our task was to make a CV parser app, that takes a PDF file that contains some C
 [Frameworks or technology](#framework) |
 [Liseince](#liseince)
 
+
+![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
+![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+
+## Description
+
+The [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) helps employers to quickly browse resumes and select the most suitable ones among them. You can download the resumes you want in PDF format from your computer. You can also search for resumes by one or more keywords. You can download resumes in JSON format.
 <!-- ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 
@@ -29,9 +38,11 @@ Our task was to make a CV parser app, that takes a PDF file that contains some C
 * Export single or multiple CVs as JSON files
 * Deleting CVs
 
-<h2 name="installation">Project Installation</h2>
+<h2 name="installation">Installation</h2>
 
-<h2 name="framework">Frameworks or technology</h2>
+<h2 name="framework">Technology</h2>
+
+
 
 <h2 name="liseince">Liseince</h2>
 
