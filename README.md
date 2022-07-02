@@ -7,7 +7,7 @@ Our task was to make a [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) a
 [Demo](#demo) |
 [How to use](#use) |
 [Features](#features) |
-[Frameworks or technology](#framework) |
+[Technology](#framework) |
 [License](#license)
 
 
@@ -48,6 +48,8 @@ The [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) helps employers to q
 * Export single or multiple CVs as JSON files
 * Deleting CVs
 
+
+<h2 name="framework">Technology</h2>
 
 
 
