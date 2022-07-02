@@ -9,7 +9,7 @@ Our task was to make a CV parser app, that takes a PDF file that contains some C
 [Features](#features) |
 [Project Installation](#installation) |
 [Frameworks or technology](#framework) |
-[Liseince](#liseince)
+[Licence](#liseince)
 
 
 ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
