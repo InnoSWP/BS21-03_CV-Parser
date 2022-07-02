@@ -1,6 +1,6 @@
 <h1 align="center"> CV-Parser "iExtract"</h1>
 
-Our task was to make a CV parser app, that takes a PDF file that contains some CV and extracts information about the skills, languages etc.
+Our task was to make a [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) app, that takes a PDF file that contains some CV and extracts information about the skills, languages etc.
 
 
 
@@ -15,18 +15,20 @@ Our task was to make a CV parser app, that takes a PDF file that contains some C
 ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 
+
+
 ## Description
 
 The [CV parser](https://cv-parser-265d0.firebaseapp.com/#/) helps employers to quickly browse resumes and select the most suitable ones among them. You can download the resumes you want in PDF format from your computer. You can also search for resumes by one or more keywords. You can download resumes in JSON format.
-<!-- ![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white)
-![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
 
-<img src="https://github.com/devicons/devicon/blob/master/icons/firebase/firebase-plain-wordmark.svg" title="Firebase" alt="Firebase" width="40" height="40"/>&nbsp; -->
 
 <h2 name="demo">Demo</h2>
 <h3> Start screen of our web application</h3>
 
- [![Start screen image](https://github.com/InnoSWP/BS21-03_CV-Parser/blob/main/startScreen.png)](https://drive.google.com/file/d/1dVcg6gwEqL9TEO06sBNJoBpG2FfI6BOK/view))
+
+ [![Start screen image](https://github.com/InnoSWP/BS21-03_CV-Parser/blob/main/startScreen.png)](https://drive.google.com/file/d/1dVcg6gwEqL9TEO06sBNJoBpG2FfI6BOK/view)
+ 
+ You can click on the picture and watch a demo video
 
 <h2 name="use">How to use</h2>
 
