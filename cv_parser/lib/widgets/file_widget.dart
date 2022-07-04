@@ -1,7 +1,7 @@
 import 'package:cv_parser/backend.dart';
 import 'package:cv_parser/main_page.dart';
 import 'package:flutter/material.dart';
-
+import 'package:auto_size_text/auto_size_text.dart';
 import 'json_holder.dart';
 
 class FileWidget extends StatefulWidget {
@@ -74,7 +74,7 @@ class _FileWidgetState extends State<FileWidget> {
             height: 30,
             color: Colors.transparent,
             alignment: Alignment.center,
-            child: Text(
+            child: AutoSizeText(
               widget.cvInfo.fileName.split('.')[0],
               style: const TextStyle(
                   color: Color.fromRGBO(73, 69, 79, 1),

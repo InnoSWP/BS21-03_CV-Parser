@@ -5,19 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1d5b69b2-7fd3-43f5-8661-776c97157f05" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/BS21-03_CV-Parser.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/BS21-03_CV-Parser.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_06_2022,_11_14_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_06_2022__11_14__Changes_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_06_2022,_11_15_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_06_2022__11_15__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_parser/ios/Flutter/Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/ios/Flutter/Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_parser/ios/Flutter/Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/ios/Flutter/Release.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_parser/lib/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/main_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_parser/lib/widgets/empty_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/widgets/empty_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/.firebase/hosting.YnVpbGQvd2Vi.cache" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/.firebase/hosting.YnVpbGQvd2Vi.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cv_parser/lib/widgets/file_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/widgets/file_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_parser/lib/widgets/json_holder_box.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/widgets/json_holder_box.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_parser/lib/widgets/search_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/widgets/search_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_parser/lib/widgets/title_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/lib/widgets/title_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_parser/macos/Flutter/Flutter-Debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/macos/Flutter/Flutter-Debug.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cv_parser/macos/Flutter/Flutter-Release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/macos/Flutter/Flutter-Release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cv_parser/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cv_parser/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
